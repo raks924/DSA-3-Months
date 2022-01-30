@@ -1,4 +1,5 @@
 #include<iostream>
+#include<climits>
 using namespace std;
 
 int main(){
@@ -15,31 +16,30 @@ int main(){
         cin>>arr[i];
     }
 
-    int current;
+    //MAX TILL I,
+    // int mx=INT_MIN;
+    
+    // for (int i = 0; i < n; i++)
+    // {
+    //     mx=max(arr[i],mx);
+    //     cout<<mx;
+    // }
 
-    //INSERTION SORT
-    for (int i = 1; i < n; i++)
-    {
-        arr[i] = current;
-        int j = i-1;
-
-        while (arr[j]>current)
-        {
-            arr[j] = arr[j+1];
-            j--;
-        }
-
-        arr[j+1] = current;
-        
-    }
-
-    cout<<"the sorted array is as follows: ";
-
+    //SUM-OF-SUBARRAYS
+    int curr = 0;
     for (int i = 0; i < n; i++)
     {
-        cout<<arr[i];
+        for (int j = i; j < n; j++)
+        {
+            curr += arr[j];
+            cout<<curr;
+        }
+        
     }
-
+    
+    
+    
+    
     
     
 }
