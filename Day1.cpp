@@ -15,6 +15,7 @@ int main(){
     }
 
 
+    //BUBBLE SORT
     int counter = 0;
     while (counter < n-1)
     {
@@ -30,7 +31,16 @@ int main(){
         }
         counter++;
     }
+    
 
+    // INSERTION SORT
+    for (int i = 1; i < n; i++)
+    {
+        int current = arr[i];
+        int j = i-1;
+        
+    }
+    
 
     for (int i = 0; i < n; i++)
     {
