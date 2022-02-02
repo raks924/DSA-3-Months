@@ -18,27 +18,29 @@ using namespace std;
 
 
 int main(){
-    int n;
-    cout<<"enter the size of array";
-    cin>>n;
+    // int n;
+    // cout<<"enter the size of array";
+    // cin>>n;
 
-    int arr[n];
-    cout<<"Enter your array"<<"\t";
-    for (int i = 0; i < n; i++)
+    // int arr[n];
+    // cout<<"Enter your array"<<"\t";
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cin>>arr[i];
+    // }
+
+
+    //ReverseNumber
+    int no;
+    cin>>no;
+
+    int rev=0;
+    while (no>0)
     {
-        cin>>arr[i];
+        rev = rev*10 + no/10;
     }
 
-    //Multiple left and right array sum
-    int start=0,end=0,mid;
-    if (n%2 == 0)
-    {
-        mid = arr[(n/2)] + arr[(n/2)+1)];
-    }else if (n%2 != 0)
-    {
-        mid = ar
-    }
-
+    cout<<rev;
     
     
     
