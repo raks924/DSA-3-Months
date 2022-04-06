@@ -32,3 +32,18 @@ int sum = 0;
     }else{
         cout<<"no armstrong";
     }
+
+//Factorial of no
+int fact(int n){
+    int product = 1;
+    
+    for (int i = 2; i <= n; i++)
+    {
+        product = i * product;   
+    }
+    return product;
+    
+}
+
+//Sum of n natural nos
+
