@@ -57,3 +57,6 @@ bool deleteEle(int a[],int z)
    return true ;
 }
 
+//REVERSE VECTOR
+
+
