@@ -12,6 +12,29 @@ int* insertElement(int arr[],int n,int x, int pos)
     return arr ;
 }
 
+int deleteElement(int arr[],int n , int r){
+
+    int i ;
+    for ( i = 0; i < n; i++)
+        if (arr[i] == r)
+        {
+            break;
+        }
+        
+
+    if(i < n){
+        
+        for (int j = i; j < n; j++) 
+        
+            arr[j] = arr[j+1];
+        
+        n--;    
+    }
+    return n;   
+    
+    
+}
+
 int main(){
     int n=5;
     
@@ -26,3 +49,13 @@ int main(){
     {
         cout<<arr[i]<<endl;
     }    
+    
+    int r = 7;
+
+    n =deleteElement(arr,n,r);    
+
+    cout<<"Deleted array is"<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
