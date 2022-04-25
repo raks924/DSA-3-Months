@@ -32,7 +32,7 @@ void zeroArrange2(int arr[],int n){
     while (i < j)
     {
         swap(arr[i],arr[j]);
-        i++;
+        i++
         j--;
     }    
 }
