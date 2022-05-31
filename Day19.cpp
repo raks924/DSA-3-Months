@@ -42,5 +42,4 @@ void Leader(int arr[],int n){
         swap(arr[i],arr[n-i-1]);
         
     }
-    
-}
+    }
