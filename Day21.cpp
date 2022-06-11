@@ -17,3 +17,20 @@ int ChocDistrProb(int arr[],int m, int n) {
      }
      return res;
 }
+
+
+//STOCK BUY AND SELL
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int begin = INT_MAX;
+        int sell = 0;
+        for(int i = 0 ;i< prices.size();i++) {
+            begin = min(begin, prices[i]);            
+            sell = max(sell, prices[i]-begin);
+        }
+        if(sell < 0)
+            return -1;
+        return sell;
+    }
+};
