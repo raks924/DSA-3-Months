@@ -63,3 +63,24 @@ class Solution
             return 0;
     }
 };
+
+
+int equilibriumPoint(long long a[], int n) {
+       
+       int sum = 0;
+       for(int i=0; i<n; i++){
+           sum += a[i]; 
+       }
+       int left_sum = 0;
+       if(n==1){
+           return 1;
+       }
+       for(int i=1; i<n; i++){
+            left_sum += a[i-1];
+            if(left_sum==sum-left_sum-a[i]){
+                return i+1;
+            }
+       }
+       return -1;
+    }
+};
