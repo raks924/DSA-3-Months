@@ -32,7 +32,8 @@ bool isAnagram(string s, string t) {
         
         for(int i = 0 ; i< s.length();i++){
             count[s[i]]++;
-        }
+        
+            
         
         for(int i = 0 ; i< t.length();i++){
             count[t[i]]--;
