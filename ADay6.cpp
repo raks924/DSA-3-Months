@@ -38,3 +38,29 @@ vector<int>v1;
        }
        }
    }
+
+
+
+
+int remove_duplicate(int a[],int n){
+        // code here
+        int start = 0;
+        for(int i = 1;i<n;i++)
+        {
+            if(a[start]!=a[i])
+            {
+                start++;
+                a[start]=a[i];
+            }
+        }
+        return start+1;
+    }
+
+
+int nonZero = 0;
+        for(int j=0;j<n;j++){
+            if(arr[j] != 0){
+                swap(arr[j], arr[nonZero]);
+                nonZero++;
+            }
+        }
