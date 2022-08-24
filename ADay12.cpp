@@ -64,6 +64,60 @@ int findMin(vector<int>& nums) {
     }
 
 
+vector<vector<int>> threeSum(vector<int>& arr) {
+        int targetSum = 0;
+        int n = arr.size();
+        sort(arr.begin(),arr.end());
+        vector<vector<int>> result;
+
+        // pick every a[i], pair sum for remaining part
+        for(int i=0; i<=n-3; i++){
+            if(i>0 && arr[i] == arr[i-1]){
+                continue;
+            }
+            // first pointer
+            int j = i+1;
+            // second pointer
+            int k = n-1;
+
+            // two pointer approach 
+            while(j<k){
+                int threesum = arr[i] + arr[j] + arr[k];
+
+                if(threesum == targetSum){
+                    result.push_back({arr[i],arr[j],arr[k]});
+                    j++;
+                    while (arr[j] == arr[j-1] && j<k)
+                        {
+                            j++;
+                        }
+                }
+                else if(threesum > targetSum){
+                    k--;
+                }
+                else{
+                    j++;
+                }
+            }
+        }
+        return result;
+
+    }
+};
+
+
+
+ int kthSmallest(int arr[], int l, int r, int k) {
+        int n = r-l+1;
+        
+        if(k>n)
+            return -1;
+            
+        sort(arr,arr+n);
+        
+        return arr[k-1];
+    }
+
 
 
 
