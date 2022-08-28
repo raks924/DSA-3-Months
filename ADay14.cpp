@@ -89,6 +89,66 @@ string replaceSpaces(string &str){
 
 
 
+ bool checkEqual(int a[26],int b[26])
+    {       
+        for(int i = 0 ; i < 26; i++){
+            if(a[i] != b[i])
+                return 0;
+        }
+        return 1;
+    }
+    
+public:
+    bool checkInclusion(string s1, string s2) {
+        
+        int arr1[26] = {0};
+        int arr2[26] = {0};
+        int i = 0;
+        int windowSize = s1.length();;
+        int j =0;
+        while(j < s1.length()){
+            char ch = s1[i];
+            int num = ch - 'a';
+            arr1[num]++;
+            i++;
+        }
+        
+        while(i < windowSize && i < s2.length()){
+            char ch = s2[i];
+            int count = ch - 'a';
+            arr2[count]++;
+            i++;
+        }
+        
+        if(checkEqual(arr1,arr2)){
+            return 1;
+        }
+        
+        while(i < s2.length()){
+            char newChar = s2[i];
+            int num = newChar - 'a';
+            arr2[num]++;
+            
+            char oldChar = s2[i-windowSize];
+            num = oldChar - 'a';
+            arr2[num]--;
+            
+            i++;
+            
+            if(checkEqual(arr1,arr2))
+            {
+                return 1;
+            }
+        }
+        
+        return 0;
+    
+    }
+
+
+
+
+
 
 
 string removeOccurrences(string s, string part) {
@@ -115,3 +175,29 @@ int count;
        }
        
     return str;
+
+
+
+int compress(vector<char>& chars) {
+        int ansIndex = 0;
+        int n = chars.size();
+        int i = 0;
+        while(i < n){
+            int j = i+1;
+            while(j<n && chars[i] == chars[j]){
+                j++;
+            }
+            chars[ansIndex++] = chars[i];
+            
+            int count = j-i;
+            
+            if(count>1){
+            string ct = to_string(count);
+            for(char ch:ct){
+                chars[ansIndex++] = ch;
+            }
+            }
+            i = j;
+        }
+        return ansIndex;
+    }
