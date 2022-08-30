@@ -1,0 +1,46 @@
+string decodeMessage(string key, string message) {
+        char c = 'a';
+        int i = 0;
+        unordered_map<char,char> mp;
+        while(i < key.length() && c <= 'z'){
+        if(key[i] == ' ' || mp.count(key[i])){i++;continue;}
+        mp[key[i]] = c;
+        c++;
+        i++;
+        }
+        // for(auto &i: mp)cout<<i.first<<" ";cout<<endl;
+        // for(auto &i: mp)cout<<i.second<<" ";cout<<endl;
+        key = "";
+        for(auto &i: message){
+        if(i== ' '){
+        key += ' ';
+        continue;
+        }
+        key += mp[i];
+        }
+        return key;
+    }
+};
+
+
+
+
+int countConsistentStrings(string allowed, vector<string>& words) {
+        bool freqAllowed[26] = {false};
+        for(char ch: allowed){
+            freqAllowed[ch-'a'] = true;
+        }
+        int allowedWords = 0;
+        for(string word: words){
+            bool isConsistent = true;
+            for(char ch: word){
+                if(freqAllowed[ch-'a'] == 0){
+                    isConsistent = false;
+                    break;
+                }
+            }
+            allowedWords += isConsistent;
+        }
+        
+        return allowedWords;
+    }
