@@ -43,3 +43,29 @@ vector<int> increment(vector<int> arr ,int N) {
         }
     
         return arr;
+
+ 
+ 
+ 
+ vector<int> leaders(int a[], int n){
+        int cnt = 1, max = a[n-1];
+
+        vector<int> v;
+
+        v.push_back(max);
+
+        for(int i = n-2; i >= 0; --i){
+
+            if(a[i] >= max){
+
+                v.push_back(a[i]);
+
+                max = a[i];
+
+            }
+
+        }
+
+        reverse(v.begin(), v.end());
+
+        return v;
